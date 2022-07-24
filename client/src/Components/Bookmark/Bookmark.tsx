@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input, Modal } from 'antd';
 import React, { useState } from 'react';
 import './Bookmark.css';
-import { LinkOutlined, EditOutlined } from '@ant-design/icons';
+import { LinkOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
 const Bookmark: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(false);
@@ -17,11 +17,16 @@ const Bookmark: React.FC = () => {
             <a href="http://google.com" target="_blank" rel="noreferrer">
               <LinkOutlined />
             </a>
-            <Button type="link" onClick={() => setVisible(true)}>
-              <EditOutlined />
-            </Button>
           </div>
         }
+        actions={[
+          <Button type="link" onClick={() => setVisible(true)}>
+            <EditOutlined />
+          </Button>,
+          <Button type="link" danger>
+            <DeleteOutlined />
+          </Button>,
+        ]}
         style={{ width: 300 }}
       >
         <p>
@@ -33,7 +38,7 @@ const Bookmark: React.FC = () => {
       <Modal
         title="Basic Modal"
         visible={visible}
-        onCancel={handleClose}  
+        onCancel={handleClose}
         okButtonProps={{ hidden: true }}
       >
         <Form name="update-bookmark" autoComplete="off" layout="vertical">
