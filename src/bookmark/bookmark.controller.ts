@@ -4,7 +4,10 @@ import {
   Get,
   HttpCode,
   HttpStatus,
+  Param,
+  ParseIntPipe,
   Post,
+  Put,
   UseGuards,
 } from '@nestjs/common';
 import { Bookmark } from '@prisma/client';
@@ -34,6 +37,16 @@ export class BookmarkController {
   ): Promise<Bookmark> {
     return this.bookmarkService.createBookmark(body, userId);
   }
+
   // Update info in bookmark
+  @UseGuards(JwtGuard)
+  @Put('update/:id')
+  updateBookmark(
+    @Body() body: BookmarksDto,
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<Bookmark> {
+    return this.bookmarkService.updateBookmark(body, id);
+  }
+
   // Delete a bookmark
 }
