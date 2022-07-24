@@ -14,6 +14,8 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+/* Utility classes  */
+
 .flex {
   display: flex;
   gap: 1rem;
@@ -36,8 +38,16 @@ body {
   justify-content: space-between;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .bold {
   font-weight: bold;
+}
+
+.bg-white {
+  background: #fff;
 }
 
 .container {
