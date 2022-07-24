@@ -1,11 +1,10 @@
 import { Button, Form, Input } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
 
-const Login: React.FC = () => {
+const Singup: React.FC = () => {
   return (
-    <div className="login container min-height-100 flex align-items-center justify-content-center">
+    <div className="container min-height-100 flex align-items-center justify-content-center">
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -39,11 +38,11 @@ const Login: React.FC = () => {
         </Form.Item>
 
         <p>
-          Did not have an account? <Link to={'/singup'}>Signup</Link>
+          Already have an account? <Link to={'/login'}>Login</Link>
         </p>
       </Form>
     </div>
   );
 };
 
-export default Login;
+export default Singup;
