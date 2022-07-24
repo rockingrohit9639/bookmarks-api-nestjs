@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   HttpCode,
   HttpStatus,
@@ -43,10 +44,17 @@ export class BookmarkController {
   @Put('update/:id')
   updateBookmark(
     @Body() body: BookmarksDto,
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id', ParseIntPipe) bookmarkId: number,
   ): Promise<Bookmark> {
-    return this.bookmarkService.updateBookmark(body, id);
+    return this.bookmarkService.updateBookmark(body, bookmarkId);
   }
 
   // Delete a bookmark
+  @UseGuards(JwtGuard)
+  @Delete('delete/:id')
+  deleteBookmark(
+    @Param('id', ParseIntPipe) bookmarkId: number,
+  ): Promise<Bookmark> {
+    return this.bookmarkService.deleteBookmark(bookmarkId);
+  }
 }

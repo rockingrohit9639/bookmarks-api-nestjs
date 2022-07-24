@@ -1,5 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 import { Bookmark } from '@prisma/client';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { BookmarksDto } from './dto/bookmarks.dto';
 
@@ -34,14 +35,33 @@ export class BookmarkService {
     body: BookmarksDto,
     bookmarkId: number,
   ): Promise<Bookmark> {
-    const bookmark = await this.prisma.bookmark.update({
+    try {
+      const bookmark = await this.prisma.bookmark.update({
+        where: {
+          id: bookmarkId,
+        },
+        data: {
+          title: body.title,
+          description: body.description,
+          link: body.link,
+        },
+      });
+
+      return bookmark;
+    } catch (err) {
+      if (err instanceof PrismaClientKnownRequestError) {
+        if (err.code === 'P2025') {
+          throw new ForbiddenException('Bookmark does not exists.');
+        }
+      }
+      throw err;
+    }
+  }
+
+  async deleteBookmark(bookmarkId: number): Promise<Bookmark> {
+    const bookmark = await this.prisma.bookmark.delete({
       where: {
         id: bookmarkId,
-      },
-      data: {
-        title: body.title,
-        description: body.description,
-        link: body.link,
       },
     });
 
