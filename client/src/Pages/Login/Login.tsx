@@ -7,14 +7,14 @@ const Login: React.FC = () => {
     <div className="login container min-height-100 flex align-items-center justify-content-center">
       <Form
         name="login-form"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
         initialValues={{ remember: true }}
         // onFinish={onFinish}
         // onFinishFailed={onFinishFailed}
         autoComplete="off"
         className="form bg-white flex  justify-content-center flex-column"
+        layout="vertical"
       >
+        <h1 className='bold'>Welcome Back!</h1>
         <Form.Item
           label="Email"
           name="email"
@@ -31,7 +31,7 @@ const Login: React.FC = () => {
           <Input.Password />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>

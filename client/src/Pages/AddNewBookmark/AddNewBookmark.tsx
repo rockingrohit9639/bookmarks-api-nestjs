@@ -1,6 +1,5 @@
 import { Button, Form, Input } from 'antd';
 import React from 'react';
-import './AddNewBookmark.css';
 
 const AddNewBookmark: React.FC = () => {
   return (

@@ -6,15 +6,15 @@ const Singup: React.FC = () => {
   return (
     <div className="container min-height-100 flex align-items-center justify-content-center">
       <Form
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
+        name="signup"
         initialValues={{ remember: true }}
         // onFinish={onFinish}
         // onFinishFailed={onFinishFailed}
         autoComplete="off"
         className="form bg-white flex  justify-content-center flex-column"
+        layout="vertical"
       >
+        <h1 className='bold'>Hey there, Good to see you</h1>
         <Form.Item
           label="Email"
           name="email"
@@ -31,7 +31,7 @@ const Singup: React.FC = () => {
           <Input.Password />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
