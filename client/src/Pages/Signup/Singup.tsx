@@ -14,15 +14,31 @@ const Singup: React.FC = () => {
         className="form bg-white flex  justify-content-center flex-column"
         layout="vertical"
       >
-        <Typography.Title className="bold">
-          Hey there, Good to see you
-        </Typography.Title>
+        <Form.Item
+          label="First Name"
+          name="firstName"
+          rules={[{ required: true, message: 'Please input your first name!' }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Last Name"
+          name="lastName"
+          rules={[{ required: true, message: 'Please input your last name!' }]}
+        >
+          <Input />
+        </Form.Item>
+
         <Form.Item
           label="Email"
           name="email"
-          rules={[{ required: true, message: 'Please input your email!' }]}
+          rules={[
+            { required: true, message: 'Please input your email!' },
+            { type: 'email', message: 'Please input a valid email!' },
+          ]}
         >
-          <Input type="email" />
+          <Input />
         </Form.Item>
 
         <Form.Item
