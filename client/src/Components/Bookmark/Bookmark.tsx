@@ -3,7 +3,7 @@ import React from 'react';
 import './Bookmark.css';
 import { LinkOutlined } from '@ant-design/icons';
 
-const Bookmark = () => {
+const Bookmark: React.FC = () => {
   return (
     <Card
       title="Google"

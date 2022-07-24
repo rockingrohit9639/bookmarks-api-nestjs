@@ -1,10 +1,16 @@
 import React from 'react';
 import Bookmark from '../../Components/Bookmark/Bookmark';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div className="home container">
-      <Bookmark />
+      <div className="grid">
+        <Bookmark />
+        <Bookmark />
+        <Bookmark />
+        <Bookmark />
+        <Bookmark />
+      </div>
     </div>
   );
 };

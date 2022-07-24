@@ -68,6 +68,19 @@ body {
   box-shadow: 0 2px 15px -8px rgba(0, 0, 0, 0.2);
 }
 
+.grid {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .form {
     width: 90%;
