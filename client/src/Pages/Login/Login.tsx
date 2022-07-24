@@ -1,10 +1,11 @@
 import { Button, Form, Input } from 'antd';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
   return (
-    <div className="login container flex align-items-center justify-content-center">
+    <div className="login container min-height-100 flex align-items-center justify-content-center">
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -13,7 +14,7 @@ const Login = () => {
         // onFinish={onFinish}
         // onFinishFailed={onFinishFailed}
         autoComplete="off"
-        className="login__form bg-white flex  justify-content-center flex-column"
+        className="form bg-white flex  justify-content-center flex-column"
       >
         <Form.Item
           label="Email"
@@ -36,6 +37,10 @@ const Login = () => {
             Submit
           </Button>
         </Form.Item>
+
+        <p>
+          Did not have an account? <Link to={'/singup'}>Signup</Link>
+        </p>
       </Form>
     </div>
   );

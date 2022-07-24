@@ -50,6 +50,10 @@ body {
   background: #fff;
 }
 
+.min-height-100 {
+  min-height: calc(100vh - 5rem);
+}
+
 .container {
   padding-inline: 1rem;
   margin-inline: auto;
