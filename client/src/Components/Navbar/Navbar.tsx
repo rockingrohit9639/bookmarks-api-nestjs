@@ -19,6 +19,11 @@ const Navbar: React.FC = () => {
               SignUp
             </Button>
           </Link>
+          <Link to={'/add-new-bookmark'}>
+            <Button type="primary" shape="round">
+              Add Bookmark
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

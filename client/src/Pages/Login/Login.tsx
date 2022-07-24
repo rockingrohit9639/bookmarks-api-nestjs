@@ -6,7 +6,7 @@ const Login: React.FC = () => {
   return (
     <div className="login container min-height-100 flex align-items-center justify-content-center">
       <Form
-        name="basic"
+        name="login-form"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         initialValues={{ remember: true }}
