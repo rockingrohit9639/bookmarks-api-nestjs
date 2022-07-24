@@ -1,4 +1,4 @@
-import { Button, Card, Form, Input, Modal } from 'antd';
+import { Button, Card, Form, Input, Modal, Typography } from 'antd';
 import React, { useState } from 'react';
 import './Bookmark.css';
 import { LinkOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
@@ -11,7 +11,7 @@ const Bookmark: React.FC = () => {
   return (
     <>
       <Card
-        title="Google"
+        title={<Typography.Title level={3}>Google</Typography.Title>}
         extra={
           <div className="flex align-items-center">
             <a href="http://google.com" target="_blank" rel="noreferrer">
@@ -29,11 +29,11 @@ const Bookmark: React.FC = () => {
         ]}
         style={{ width: 300 }}
       >
-        <p>
+        <Typography.Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ducimus
           doloremque accusamus culpa deserunt? Vero, nam! Ipsum fugit aperiam
           porro?
-        </p>
+        </Typography.Text>
       </Card>
       <Modal
         title="Basic Modal"

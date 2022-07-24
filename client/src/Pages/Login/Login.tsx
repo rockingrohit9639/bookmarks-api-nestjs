@@ -1,4 +1,4 @@
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, Typography } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ const Login: React.FC = () => {
         className="form bg-white flex  justify-content-center flex-column"
         layout="vertical"
       >
-        <h1 className='bold'>Welcome Back!</h1>
+        <Typography.Title className="bold">Welcome Back!</Typography.Title>
         <Form.Item
           label="Email"
           name="email"
@@ -37,9 +37,9 @@ const Login: React.FC = () => {
           </Button>
         </Form.Item>
 
-        <p>
+        <Typography.Text>
           Did not have an account? <Link to={'/signup'}>Signup</Link>
-        </p>
+        </Typography.Text>
       </Form>
     </div>
   );
