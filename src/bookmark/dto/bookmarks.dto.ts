@@ -6,7 +6,7 @@ export class BookmarksDto {
   title: string;
 
   @IsString()
-  description: string;
+  description?: string;
 
   @IsUrl()
   @IsNotEmpty()
