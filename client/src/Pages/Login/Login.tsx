@@ -1,7 +1,6 @@
 import { Button, Form, Input } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
 
 const Login: React.FC = () => {
   return (
@@ -39,7 +38,7 @@ const Login: React.FC = () => {
         </Form.Item>
 
         <p>
-          Did not have an account? <Link to={'/singup'}>Signup</Link>
+          Did not have an account? <Link to={'/signup'}>Signup</Link>
         </p>
       </Form>
     </div>

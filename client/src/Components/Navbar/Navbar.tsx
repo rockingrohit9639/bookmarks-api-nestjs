@@ -8,7 +8,9 @@ const Navbar: React.FC = () => {
     <div className="navbar">
       <div className="container flex align-items-center justify-content-between">
         <div className="navbar__left">
-          <h1 className='bold'>Bookmarks</h1>
+          <Link to="/">
+            <h1 className="bold">Bookmarks</h1>
+          </Link>
         </div>
         <div className="navbar__right flex align-items-center">
           <Link to={'/login'}>Login</Link>
