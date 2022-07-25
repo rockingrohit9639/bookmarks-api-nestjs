@@ -24,6 +24,8 @@ export class AuthService {
         data: {
           email: body.email,
           password: hash,
+          firstName: body.firstName ?? '',
+          lastName: body.lastName ?? '',
         },
       });
 
